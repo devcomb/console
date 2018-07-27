@@ -3,12 +3,7 @@
 Console UI for Hyperledger Fabric client application.
 
 ## Getting Started
-Install the module with: `npm install devcomb-console`
-
-```javascript
-var devcomb_console = require('devcomb-console');
-devcomb_console.awesome(); // "awesome"
-```
+_(Coming soon)_
 
 ## Documentation
 _(Coming soon)_
@@ -17,7 +12,7 @@ _(Coming soon)_
 _(Coming soon)_
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+_(Coming soon)_
 
 ## Release History
 _(Nothing yet)_
