@@ -1,0 +1,45 @@
+{
+  "name": "devcomb-console",
+  "description": "Console UI for Hyperledger Fabric client application.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/devcomb/console",
+  "author": {
+    "name": "James Drummond",
+    "email": "james@devcomb.com",
+    "url": "devcomb.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devcomb/console.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devcomb/console/issues"
+  },
+  "licenses": [
+    {
+      "type": "Eclipse",
+      "url": "https://github.com/devcomb/console/blob/master/LICENSE"
+    }
+  ],
+  "main": "lib/devcomb-console",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-node-sass": "^1.0.1",
+    "tailwindcss": "^0.6.4"
+  },
+  "keywords": [],
+  "dependencies": {
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-sass": "^1.0.0"
+  }
+}
