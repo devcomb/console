@@ -3,8 +3,8 @@ $color2: #2E2FE3;
 $color3: #FCBA12;
 $color4: #B88914;
 $color5: #201F1D;
-$color-text: #FFFFFF;
-$header-color: #333;
+$color-text: #EEF1FC;
+$header-color: #342309;
 $footer-color: $header-color;
 $nav-color: #31270C;
 $border-color: $color5;
@@ -81,7 +81,7 @@ section {
 
 /* Style the navigation menu */
 section nav {
-    flex: 4;
+    flex: 3;
     background-color: $nav-color;
 }
 
@@ -106,7 +106,7 @@ section nav ul li a {
 
 section nav ul li a:hover:not(.active) {
     background-color: $color2;
-    color: white;
+    color: $color-text;
 }
 
 

@@ -13,8 +13,8 @@ header {
   height: 5%;
   text-align: center;
   font-size: 12px;
-  color: #FFFFFF;
-  background-color: #333; }
+  color: #EEF1FC;
+  background-color: #342309; }
 
 header ul {
   height: 100%;
@@ -31,7 +31,7 @@ header ul li {
 header ul li a {
   display: flex;
   flex-direction: column;
-  color: #FFFFFF;
+  color: #EEF1FC;
   padding: 8px 20px;
   text-decoration: none;
   text-align: center; }
@@ -52,7 +52,7 @@ section {
 
 /* Style the navigation menu */
 section nav {
-  flex: 4;
+  flex: 3;
   background-color: #31270C; }
 
 section nav ul {
@@ -69,13 +69,13 @@ section nav ul li a {
 
 section nav ul li a:hover:not(.active) {
   background-color: #2E2FE3;
-  color: white; }
+  color: #EEF1FC; }
 
 /* Style the content */
 article {
   flex: 20;
   background-color: #201F1D;
-  color: #FFFFFF;
+  color: #EEF1FC;
   padding: 10px; }
 
 /* Style the footer */
@@ -83,7 +83,7 @@ footer {
   flex-direction: column;
   display: flex;
   height: 5%;
-  background-color: #333;
+  background-color: #342309;
   text-align: center;
   color: white; }
 
@@ -92,7 +92,7 @@ footer div {
 
 footer p {
   flex: 1;
-  background-color: #333; }
+  background-color: #342309; }
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
