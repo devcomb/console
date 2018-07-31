@@ -57,7 +57,8 @@ module.exports = function(grunt) {
           server: './app',
           open: false,
           port: 8080,
-          ui: false
+          ui: false,
+          cors: '*'
         }
       }
     }

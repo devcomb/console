@@ -2,5 +2,4 @@ node_modules
 .bash_history
 .jshintrc
 .travis.yml
-package-lock.json
 app/css
