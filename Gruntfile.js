@@ -39,8 +39,8 @@ module.exports = function(grunt) {
     },
     sass: {
       dist: {
-        src: 'app/scss/main.scss',
-        dest: 'app/css/main.css'
+        src: 'scss/main.scss',
+        dest: 'css/main.css'
       }
     },
     browserSync: {
