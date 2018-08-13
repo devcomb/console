@@ -3,3 +3,9 @@ node_modules
 .jshintrc
 .travis.yml
 app/css
+.cache
+.config
+.electron
+.gitconfig
+.node-gyp
+.npm
