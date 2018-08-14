@@ -10,3 +10,4 @@ app/css
 .node-gyp
 .npm
 .local
+.git-credentials
