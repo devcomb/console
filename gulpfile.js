@@ -13,7 +13,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
 		proxy: "http://localhost:5000",
         files: ["app/*.*"],
 	open: false,
-        port: 8080,
+        port: 3000,
 	});
 });
 
