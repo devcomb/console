@@ -30,14 +30,9 @@
   },
   "keywords": [],
   "dependencies": {
-    "grunt-browser-sync": "^2.2.0",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-node-sass": "^1.0.1",
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "nodemon": "^1.18.3",
     "tailwindcss": "^0.6.4"
   }
 }
