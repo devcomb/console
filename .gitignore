@@ -7,5 +7,6 @@ app/css
 .config
 .electron
 .gitconfig
+.git-credentials
 .node-gyp
 .npm
