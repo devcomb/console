@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');
+var sass        = require('gulp-sass');
 
 
 gulp.task('default', ['browser-sync'], function () {
@@ -17,7 +18,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
 	});
 });
 
-gulp.task('nodemon', function (cb) {
+gulp.task('nodemon', ['sass'], function (cb) {
 	
 	var started = false;
 	
@@ -31,4 +32,11 @@ gulp.task('nodemon', function (cb) {
 			started = true; 
 		} 
 	});
+});
+
+gulp.task('sass', function() {
+    return gulp.src("app/scss/*.scss")
+        .pipe(sass())
+        .pipe(gulp.dest("app/css"))
+        .pipe(browserSync.stream());
 });
