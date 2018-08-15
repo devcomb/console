@@ -12,3 +12,4 @@ app/css
 .npm
 .local
 .git-credentials
+.v8flags*
