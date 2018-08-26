@@ -26,6 +26,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
+    "start": "node server.js",
     "test": "echo Todo"
   },
   "keywords": [],
@@ -33,6 +34,7 @@
     "browser-sync": "^2.24.6",
     "express": "^4.16.3",
     "gulp": "^3.9.1",
+    "gulp-runtime": "^2.0.0",
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^4.0.1",
     "nodemon": "^1.18.3",
