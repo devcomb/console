@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp');
+var gulp = require('gulp-runtime').create();
 var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');
 var sass        = require('gulp-sass');
