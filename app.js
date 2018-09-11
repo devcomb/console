@@ -10,4 +10,7 @@ app.get('/', function(req, res) {
     res.sendfile('./app/index.html');
 });
 
+const expressOasGenerator = require('express-oas-generator');
+expressOasGenerator.init(app, {});
+
 app.listen(5000);

@@ -39,5 +39,8 @@
     "gulp-sass": "^4.0.1",
     "nodemon": "^1.18.3",
     "tailwindcss": "^0.6.4"
+  },
+  "devDependencies": {
+    "express-oas-generator": "^0.1.25",
   }
 }
