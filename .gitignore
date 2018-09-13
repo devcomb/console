@@ -13,3 +13,5 @@ app/css
 .local
 .git-credentials
 .v8flags*
+examples/waffle-maker/controllers
+examples/waffle-maker/definitions
