@@ -1,5 +1,7 @@
 'use strict';
 
+const wafflesImplementation = require('./examples/waffle-maker/controllers/waffles');
+
 // simple express server
 var express = require('express');
 var app = express();
@@ -11,5 +13,6 @@ app.get('/', function(req, res) {
     res.sendfile('./app/index.html');
 });
 
+app.get('/waffles/', wafflesImplementation.getWaffleList(req, res));
 
 app.listen(5000);
