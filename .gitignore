@@ -13,3 +13,4 @@ app/css
 .local
 .git-credentials
 .v8flags*
+examples

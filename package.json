@@ -27,6 +27,7 @@
   },
   "scripts": {
     "start": "node gulpfile.js",
+    "generator": "node gulpfile.js generate-code",
     "test": "echo Todo"
   },
   "nodemonConfig": {
@@ -34,6 +35,10 @@
     "delay": "2500"
   }
   "keywords": [],
+  "nodemonConfig": {
+    "ignore": ["examples/*","test/*", "docs/*"],
+    "delay": "2500"
+  },
   "dependencies": {
     "browser-sync": "^2.24.6",
     "express": "^4.16.3",
