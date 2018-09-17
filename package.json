@@ -30,10 +30,6 @@
     "generator": "node gulpfile.js generate-code",
     "test": "echo Todo"
   },
-  "nodemonConfig": {
-    "ignore": ["test/*", "docs/*", "examples/*"],
-    "delay": "2500"
-  }
   "keywords": [],
   "nodemonConfig": {
     "ignore": ["examples/*","test/*", "docs/*"],
