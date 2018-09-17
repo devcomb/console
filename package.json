@@ -29,15 +29,21 @@
     "start": "node gulpfile.js",
     "test": "echo Todo"
   },
+  "nodemonConfig": {
+    "ignore": ["test/*", "docs/*", "examples/*"],
+    "delay": "2500"
+  }
   "keywords": [],
   "dependencies": {
     "browser-sync": "^2.24.6",
     "express": "^4.16.3",
     "gulp": "^3.9.1",
-    "gulp-runtime": "^2.0.0",
     "gulp-nodemon": "^2.2.1",
+    "gulp-runtime": "^2.0.0",
     "gulp-sass": "^4.0.1",
+    "gulp-swagger-codegen": "^2.0.3",
     "nodemon": "^1.18.3",
+    "swagger-template-es6-server": "^0.1.0",
     "tailwindcss": "^0.6.4"
   },
   "devDependencies": {
