@@ -55,7 +55,8 @@ gulp.task('generate-code', () => {
     .pipe(codegen(templateSet({
       implementationPath: '../implementation',
     })))
-    .pipe(gulp.dest('./examples')));
+    .pipe(gulp.dest('./examples'));
+});
 
 gulp.task('browser-sync', function(done) {
 	browserSync.init({
@@ -72,7 +73,7 @@ gulp.task('browser-sync', function(done) {
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('default', gulp.series('startNodemon','browser-sync', 'generate-code','sass') );
+gulp.task('default', gulp.series('generate-code','sass','startNodemon','browser-sync') );
 
 
 
