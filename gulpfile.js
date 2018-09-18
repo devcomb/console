@@ -49,7 +49,7 @@ gulp.task('sass',  function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('generate-code', () =>
+gulp.task('generate-code', () => {
   gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/implementation']).pipe(gulp.dest('./examples'));
   gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/service-contract.yaml'])
     .pipe(codegen(templateSet({
