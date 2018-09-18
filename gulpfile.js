@@ -7,20 +7,20 @@ var sass        = require('gulp-sass');
 const templateSet = require('swagger-template-es6-server');
 const codegen = require('gulp-swagger-codegen');
 
-gulp.task('default', ['generate-code'], ['browser-sync'], function () {
+gulp.task('default', ['browser-sync'], function () {
 });
 
-gulp.task('browser-sync', ['sass'], function() {
+gulp.task('browser-sync', ['generate-code','sass'], function() {
 	browserSync.init(null, {
-	proxy: "http://localhost:5000",
-        files: ["app/*.*"],
+	// proxy: "http://localhost:5000",
+    //     files: ["app/*.*"],
 	open: false,
 	host: process.env.HOSTNAME,
 	server: "./app",
         port: 8080,
 	});
-    	gulp.watch("app/scss/*.scss", ['sass']);
-    	gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch("app/scss/*.scss", ['sass']);
+    gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('sass',  function() {
@@ -34,5 +34,5 @@ gulp.task('generate-code', () =>
   gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/service-contract.yaml'])
     .pipe(codegen(templateSet({
       implementationPath: '../implementation',
-    }))));
-    //.pipe(gulp.dest('./examples')));
+    })))
+    .pipe(gulp.dest('./examples')));

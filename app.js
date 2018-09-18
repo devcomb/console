@@ -12,7 +12,7 @@ app.use(express.static('app'));
 app.get('/', function(req, res) {
     res.sendfile('./app/index.html');
 });
-
+console.log("test");
 //app.get('/waffles/', wafflesImplementation.getWaffleList(req, res));
 
 app.listen(5000);
