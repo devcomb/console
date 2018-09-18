@@ -37,8 +37,8 @@
       "test/*",
       "docs/*"
     ],
-    "delay": "2500",
-    "stdout": "true"
+    "delay": "200",
+    "stdout": "false"
   },
   "dependencies": {
     "browser-sync": "^2.24.6",

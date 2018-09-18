@@ -11,11 +11,13 @@ gulp.task('default', ['browser-sync'], function () {
 });
 
 gulp.task('browser-sync', ['generate-code','sass'], function() {
-	browserSync.init(null, {
+	browserSync.init({
 	// proxy: "http://localhost:5000",
     //     files: ["app/*.*"],
 	open: false,
 	host: process.env.HOSTNAME,
+    notify: false,
+    localOnly: true,
 	server: "./app",
         port: 8080,
 	});
