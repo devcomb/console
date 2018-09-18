@@ -1,6 +1,6 @@
 'use strict';
 
-//const wafflesImplementation = require('./implementation/examples/waffle-maker/controllers/waffles');
+const wafflesImplementation = require('./examples/controllers/waffles');
 
 // simple express server
 var express = require('express'); 
@@ -12,7 +12,10 @@ app.use(express.static('app'));
 app.get('/', function(req, res) {
     res.sendfile('./app/index.html');
 });
-console.log("test");
-//app.get('/waffles/', wafflesImplementation.getWaffleList(req, res));
+console.log("test1");
 
-app.listen(5000);
+app.get('/waffles/', wafflesImplementation.getWaffleList);
+
+console.log("test2");
+
+app.listen(5000); 

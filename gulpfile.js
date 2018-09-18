@@ -11,6 +11,7 @@ gulp.task('startNodemon',  function(done) {
   const STARTUP_TIMEOUT = 5000;
   const server = nodemon({
     script: 'app.js',
+    stderr: false,
     stdout: false // without this line the stdout event won't fire
   });
   let starting = false;
@@ -31,6 +32,14 @@ gulp.task('startNodemon',  function(done) {
       onReady();
     }
   });
+
+  server.on('stderr', (err) => {
+    process.stderr.write(err); // pass the stdout through
+    if (starting) {
+      process.exit(1);
+    }
+  });
+
 });
 
 gulp.task('sass',  function() {
