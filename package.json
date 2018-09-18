@@ -31,15 +31,6 @@
     "test": "echo Todo"
   },
   "keywords": [],
-  "nodemonConfig": {
-    "ignore": [
-      "examples/*",
-      "test/*",
-      "docs/*"
-    ],
-    "delay": "200",
-    "stdout": "false"
-  },
   "dependencies": {
     "browser-sync": "^2.24.6",
     "express": "^4.16.3",
