@@ -65,7 +65,7 @@ gulp.task('generate-code', function(done) {
 gulp.task('browser-sync', function(done) {
 	browserSync.init({
 	// proxy: "http://localhost:5000",
-    //     files: ["app/*.*"],
+    files: ["app/*.*"],
 	open: false,
 	host: process.env.HOSTNAME,
     notify: false,
