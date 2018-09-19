@@ -42,20 +42,24 @@ gulp.task('startNodemon',  function(done) {
 
 });
 
-gulp.task('sass',  function() {
-    return gulp.src("app/scss/*.scss")
+gulp.task('sass',  function(done) {
+    console.log("sass");
+    gulp.src("app/scss/*.scss")
         .pipe(sass())
-        .pipe(gulp.dest("app/css"))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest("app/css"));
+    done();
 });
 
-gulp.task('generate-code', () => {
-  gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/implementation']).pipe(gulp.dest('./examples'));
-  gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/service-contract.yaml'])
+gulp.task('generate-code', function(done) {
+    console.log("generate-code");
+    gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/implementation/*']).pipe(gulp.dest('./examples/implementation'));
+    gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/service-contract.yaml'])
     .pipe(codegen(templateSet({
-      implementationPath: '../implementation',
+        implementationPath: '../implementation',
     })))
     .pipe(gulp.dest('./examples'));
+    console.log("generate-code end");
+    done();
 });
 
 gulp.task('browser-sync', function(done) {
@@ -71,6 +75,7 @@ gulp.task('browser-sync', function(done) {
 	},done);
     gulp.watch("app/scss/*.scss", ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
+    done();
 });
 
 gulp.task('default', gulp.series('generate-code','sass','startNodemon','browser-sync') );
