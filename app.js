@@ -18,4 +18,6 @@ app.get('/waffles/', wafflesImplementation.getWaffleList);
 
 console.log("test2");
 
-app.listen(5000); 
+var appPort = Object.is(process.env.APP_PORT, undefined) ? 8080 : process.env.APP_PORT;
+
+app.listen(appPort); 

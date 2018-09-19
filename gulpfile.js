@@ -62,23 +62,7 @@ gulp.task('generate-code', function(done) {
     done();
 });
 
-gulp.task('browser-sync', function(done) {
-	browserSync.init({
-	// proxy: "http://localhost:5000",
-    files: ["app/*.*"],
-	open: false,
-	//host: process.env.HOSTNAME,
-    notify: false,
-    localOnly: true,
-	server: "./app",
-    port: 8080,
-	},done);
-    gulp.watch("app/scss/*.scss", ['sass']);
-    gulp.watch("app/*.html").on('change', browserSync.reload);
-    done();
-});
-
-gulp.task('default', gulp.series('generate-code','sass','startNodemon','browser-sync') );
+gulp.task('default', gulp.series('generate-code','sass','startNodemon') );
 
 
 
