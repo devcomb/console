@@ -67,11 +67,11 @@ gulp.task('browser-sync', function(done) {
 	// proxy: "http://localhost:5000",
     files: ["app/*.*"],
 	open: false,
-	host: process.env.HOSTNAME,
+	//host: process.env.HOSTNAME,
     notify: false,
     localOnly: true,
 	server: "./app",
-        port: 8080,
+    port: 8080,
 	},done);
     gulp.watch("app/scss/*.scss", ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
