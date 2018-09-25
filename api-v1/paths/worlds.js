@@ -4,7 +4,7 @@ export default function(worldsService) {
   };
  
   function GET(req, res, next) {
-    res.status(200).json(worldsService.getWorlds(req.query.worldName));
+    res.status(200).yaml(worldsService.getWorlds(req.query.worldName));
   }
  
   // NOTE: We could also use a YAML string here.
@@ -23,7 +23,7 @@ export default function(worldsService) {
       200: {
         description: 'A list of worlds that match the requested name.',
         schema: {
-          type: 'array',
+          type: 'array', 
           items: {
             $ref: '#/definitions/World'
           }
