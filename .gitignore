@@ -14,3 +14,4 @@ app/css
 .git-credentials
 .v8flags*
 examples
+api/gen
