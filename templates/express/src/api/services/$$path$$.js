@@ -1,3 +1,5 @@
+const {{camelCase operation_name}} = require('../../../../impl_{{operation_name}}');
+
 {{#each operation}}
   {{#each this.path}}
     {{#validMethod @key}}
@@ -31,7 +33,7 @@ module.exports.{{../operationId}} = async (options) => {
 
   return {
     status: 200,
-    data: '{{../operationId}} ok!'
+    data: {{camelCase ../../../operation_name}}.{{../operationId}}(options)
   };
 };
 

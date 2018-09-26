@@ -1,5 +1,5 @@
 const express = require('express');
-const {{camelCase operation_name}} = require('../../../../impl_{{operation_name}}');
+const {{camelCase operation_name}} = require('../services/{{operation_name}}');
 
 const router = new express.Router();
 
