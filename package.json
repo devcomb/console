@@ -34,6 +34,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "browser-sync": "^2.24.6",
+    "bunyan": "^1.8.12",
     "cookie-parser": "^1.4.3",
     "esm": "^3.0.84",
     "express": "^4.16.3",
@@ -43,6 +44,7 @@
     "gulp-runtime": "^2.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-swagger-codegen": "^2.0.3",
+    "node-yaml-config": "0.0.4",
     "nodemon": "^1.18.3",
     "openapi3-generator": "^0.7.0",
     "swagger-template-es6-server": "^0.1.0",

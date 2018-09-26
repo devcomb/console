@@ -2,7 +2,7 @@
 
 // simple express server
 var express = require('express'); 
-var api = require('./api/gen/src/api/index.js'); 
+var app = require('./api/gen/src/api/index.js'); 
 // var app = express();
 // var router = express.Router();
 
