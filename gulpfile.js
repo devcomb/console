@@ -1,11 +1,9 @@
 'use strict';
 
 var gulp = require('gulp-runtime').create();
-var browserSync = require('browser-sync');
+var execSync = require('child_process').execSync;
 var nodemon = require('gulp-nodemon');
-var sass        = require('gulp-sass');
-const templateSet = require('swagger-template-es6-server');
-const codegen = require('gulp-swagger-codegen');
+var sass = require('gulp-sass');
 
 gulp.task('startNodemon',  function(done) {
   const STARTUP_TIMEOUT = 5000;
@@ -51,18 +49,12 @@ gulp.task('sass',  function(done) {
 });
 
 gulp.task('generate-code', function(done) {
-    console.log("generate-code");
-    gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/implementation/*']).pipe(gulp.dest('./examples/implementation'));
-    gulp.src(['./node_modules/gulp-swagger-codegen/examples/waffle-maker/service-contract.yaml'])
-    .pipe(codegen(templateSet({
-        implementationPath: '../implementation',
-    })))
-    .pipe(gulp.dest('./examples'));
-    console.log("generate-code end");
+    execSync("./node_modules/.bin/og -o api/gen -t ./templates petstore.yaml express", {stdio:[0,1,2]});
     done();
 });
 
-gulp.task('default', gulp.series('generate-code','sass','startNodemon') );
+gulp.task('default', gulp.series('startNodemon') );
 
+gulp.task('postinstall', gulp.series('generate-code','sass') );
 
-
+gulp.task('dev', gulp.series('generate-code','sass','startNodemon') );

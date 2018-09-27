@@ -26,31 +26,25 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
+    "postinstall": "node gulpfile.js postinstall",
     "start": "node gulpfile.js",
-    "generator": "node gulpfile.js generate-code",
     "test": "echo Todo"
   },
   "keywords": [],
   "dependencies": {
     "body-parser": "^1.18.3",
-    "browser-sync": "^2.24.6",
     "bunyan": "^1.8.12",
+    "child_process": "^1.0.2",
     "cookie-parser": "^1.4.3",
-    "esm": "^3.0.84",
     "express": "^4.16.3",
     "express-openapi": "^2.0.7",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-runtime": "^2.0.0",
     "gulp-sass": "^4.0.1",
-    "gulp-swagger-codegen": "^2.0.3",
+    "lodash": "^4.17.11",
     "node-yaml-config": "0.0.4",
-    "nodemon": "^1.18.3",
     "openapi3-generator": "^0.7.0",
-    "swagger-template-es6-server": "^0.1.0",
     "tailwindcss": "^0.6.4"
-  },
-  "devDependencies": {
-    "express-oas-generator": "^0.1.25"
   }
 }
