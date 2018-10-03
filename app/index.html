@@ -3,6 +3,8 @@
 <head>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script crossorigin src="/main.mjs" type="module"></script>
 <title>CSS Template</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,6 +32,9 @@
   </nav>
 
   <article>
+    <div id="app">
+      {{ message }}
+    </div>
   </article>
 </section>
 
