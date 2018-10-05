@@ -3,7 +3,6 @@
 var gulp = require('gulp-runtime').create();
 var execSync = require('child_process').execSync;
 var nodemon = require('gulp-nodemon');
-var sass = require('gulp-sass');
 
 gulp.task('startNodemon',  function(done) {
   const STARTUP_TIMEOUT = 5000;
@@ -40,8 +39,20 @@ gulp.task('startNodemon',  function(done) {
 
 });
 
+gulp.task('vue',  function(done) {
+    if(process.env.DEV_MODE){
+        gulp.src("./node_modules/vue/dist/vue.js")
+            .pipe(gulp.dest("app/dist"));
+    }
+    else{
+        gulp.src("./node_modules/vue/dist/vue.min.js")
+            .pipe(gulp.dest("app/dist"));
+    }
+    done();
+});
+
 gulp.task('sass',  function(done) {
-    console.log("sass");
+    var sass = require('gulp-sass');
     gulp.src("app/scss/*.scss")
         .pipe(sass())
         .pipe(gulp.dest("app/css"));
@@ -53,8 +64,23 @@ gulp.task('generate-code', function(done) {
     done();
 });
 
+gulp.task('minify', function(done) {
+    var minify = require('gulp-minify');
+    gulp.src(['app/*.js', 'app/*.mjs'])
+        .pipe(minify({
+            ext:{
+                src:'-debug.js',
+                min:'.js'
+            },
+            exclude: ['tasks'],
+            ignoreFiles: ['.combo.js', '-min.js']
+        }))
+        .pipe(gulp.dest("app/dist"));
+    done();
+});
+
 gulp.task('default', gulp.series('startNodemon') );
 
-gulp.task('postinstall', gulp.series('generate-code','sass') );
+gulp.task('postinstall', gulp.series('generate-code','minify','sass','vue') );
 
 gulp.task('dev', gulp.series('generate-code','sass','startNodemon') );
