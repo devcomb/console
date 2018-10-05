@@ -51,6 +51,18 @@ gulp.task('vue',  function(done) {
     done();
 });
 
+gulp.task('tailwind',  function(done) {
+    if(process.env.DEV_MODE){
+        gulp.src("./node_modules/tailwind/dist/tailwind.css")
+            .pipe(gulp.dest("app/dist"));
+    }
+    else{
+        gulp.src("./node_modules/tailwind/dist/tailwind.min.css")
+            .pipe(gulp.dest("app/dist"));
+    }
+    done();
+});
+
 gulp.task('sass',  function(done) {
     var sass = require('gulp-sass');
     gulp.src("app/scss/*.scss")
@@ -81,6 +93,6 @@ gulp.task('minify', function(done) {
 
 gulp.task('default', gulp.series('startNodemon') );
 
-gulp.task('postinstall', gulp.series('generate-code','minify','sass','vue') );
+gulp.task('build', gulp.series('generate-code','minify','sass','vue','tailwind') );
 
 gulp.task('dev', gulp.series('generate-code','sass','startNodemon') );
