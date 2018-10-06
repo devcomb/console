@@ -1,6 +1,5 @@
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-})
+import App from './components/App.js';
+
+new Vue({
+  render: h => h(App),
+}).$mount(`#app`);
