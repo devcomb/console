@@ -45,10 +45,12 @@
     "openapi3-generator": "^0.7.0"
   },
   "devDependencies": {
+    "autoprefixer": "^9.1.5",
     "browser-sync": "^2.26.0",
     "gulp-minify": "^3.1.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.1",
-    "tailwindcss": "^0.6.4",
+    "tailwindcss": "^0.6.6",
     "vue": "^2.5.17"
   }
 }

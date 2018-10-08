@@ -1,11 +1,25 @@
 'use strict';
 
 var gulp = require('gulp-runtime').create();
-var execSync = require('child_process').execSync;
-var browserSync = require('browser-sync');
-var nodemon = require('gulp-nodemon');
+
+gulp.task('css', function () {
+  var postcss = require('gulp-postcss');
+  var tailwindcss = require('tailwindcss');
+
+  return gulp.src('styles.css')
+    // ...
+    .pipe(postcss([
+      // ...
+      tailwindcss('./tailwind.js'),
+      require('autoprefixer'),
+      // ...
+    ]))
+    // ...
+    .pipe(gulp.dest('./app/css/'));
+});
 
 gulp.task('browsersync', function() {
+    var browserSync = require('browser-sync');
 	browserSync.init(null, {
 		proxy: "http://localhost:8081",
         files: ["app/**/*.*"],
@@ -17,18 +31,11 @@ gulp.task('browsersync', function() {
         socket: {
             domain: ':443'
         }
-    }, function (err, bs) {
-        // bs.options.url contains the original url, so
-        // replace the port with the correct one:
-        console.log('bs.options.urls: ' + bs.options);
-        // var url = bs.options.urls;
-        // require('opn')(url);
-        // console.log('Started browserSync on ' + url);
-    }
-    );
+    });
 });
 
 gulp.task('startNodemon',  function(done) {
+  var nodemon = require('gulp-nodemon');
   const STARTUP_TIMEOUT = 5000;
   const server = nodemon({
     script: 'app.js',
@@ -96,6 +103,7 @@ gulp.task('sass',  function(done) {
 });
 
 gulp.task('generate-code', function(done) {
+    var execSync = require('child_process').execSync;
     execSync("./node_modules/.bin/og -o api/gen -t ./templates petstore.yaml express", {stdio:[0,1,2]});
     done();
 });
