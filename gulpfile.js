@@ -103,8 +103,10 @@ gulp.task('sass',  function(done) {
 });
 
 gulp.task('generate-code', function(done) {
-    var execSync = require('child_process').execSync;
-    execSync("./node_modules/.bin/og -o api/gen -t ./templates petstore.yaml express", {stdio:[0,1,2]});
+    if(process.env.DEV_MODE){
+        var execSync = require('child_process').execSync;
+        execSync("./node_modules/.bin/og -o api/gen -t ./templates petstore.yaml express", {stdio:[0,1,2]});
+    }
     done();
 });
 
