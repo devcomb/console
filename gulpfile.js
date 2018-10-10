@@ -104,7 +104,9 @@ gulp.task('sass',  function(done) {
 
 gulp.task('generate-code', function(done) {
     if(process.env.DEV_MODE){
+        var del = require('del');
         var execSync = require('child_process').execSync;
+        del.sync('api/gen');
         execSync("./node_modules/.bin/og -o api/gen -t ./templates petstore.yaml express", {stdio:[0,1,2]});
     }
     done();

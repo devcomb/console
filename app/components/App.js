@@ -1,8 +1,8 @@
-export default {
-  name: 'App',
+export default Vue.component('menu-item', {
   template: `
-    <div class="container mx-auto p-4">
-      <h1>Hello World 8</h1>
-    </div>
+  <div
+      class="rounded-r-lg flex-1 text-grey-darker text-center bg-orange-lighter px-1 py-1 mb-1"
+  >{{ title }}</div>
   `,
-};
+  props: ['title']
+});
