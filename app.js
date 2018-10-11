@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express'); 
-var app = require('./api/gen/src/api/index.js'); 
+var app = require('./api/gen/src/api/api.js'); 
 
 app.use('/',express.static('app'));
 

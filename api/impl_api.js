@@ -9,5 +9,5 @@
  const util = require('util');
 
 module.exports.getSideNavMenus = function(options) {
-    return "getSideNavMenus hello world";
+    return '{ "menus" : [ { "id" : 1 , "title" : "test1" } , { "id" : 2 , "title" : "test3" } ] }';
 };

@@ -1,11 +1,8 @@
-var yaml_config = require('node-yaml-config');
-var config = yaml_config.load('./config/menu-section-left.yml');
-console.log(config); 
-
 import App from './components/App.js';
 
 Vue.component('my-component', {
-  template: '<p class="foo bar">Hi</p>'
+//  template: '<p class="foo bar">Hi</p>'
+  template: '<div/>'
 })
 
 // new Vue({
@@ -14,20 +11,14 @@ Vue.component('my-component', {
 
 new Vue({
   el: '#app',
-  data: {
-    menus: [
-      {
-        id: 1,
-        title: 'Do the dishes',
-      },
-      {
-        id: 2,
-        title: 'Take out the trash',
-      },
-      {
-        id: 3,
-        title: 'Mow the lawn'
-      }
-    ]
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    axios
+      .get('https://nodejs-theia-nginx-test8.cloudapps.devcomb.com/api/getSideNavMenus')
+      .then(response => (this.info = response.data.menus ));
   }
 })

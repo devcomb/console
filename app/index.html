@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <link href="css/styles.css" rel="stylesheet">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="dist/vue.js"></script>
 <script crossorigin src="/main.mjs" type="module"></script>
 <title>CSS Template</title>
@@ -36,7 +37,7 @@
             <my-component class="baz boo"></my-component>
               <div
                 is="menu-item"
-                v-for="(menu, index) in menus"
+                v-for="menu in info"
                 v-bind:key="menu.id"
                 v-bind:title="menu.title"
             ></div>
