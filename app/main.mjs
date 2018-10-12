@@ -39,10 +39,9 @@ var vm = new Vue({
   // define methods under the `methods` object
   methods: {
     greet: function (event) {
-      // `this` inside methods point to the Vue instance
-      alert('Hello ' + this.name + '!')
-      // `event` is the native DOM event
-      alert(event.target.tagName)
+        import('./components/test.mjs').then(module => {
+            module.default();
+        });
     }
   }
 })
