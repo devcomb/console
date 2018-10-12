@@ -45,6 +45,7 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
   'transparent': 'transparent',
+  'orange-comb': '#b88914',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',

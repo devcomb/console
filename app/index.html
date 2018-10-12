@@ -22,6 +22,14 @@
 <section>
   <nav>
     <ul>
+        <div class="flex flex-col" id="app">
+            <div
+                is="menu-item"
+                v-for="menu in info"
+                v-bind:title="menu.title"
+                v-bind:action="menu.action"
+            ></div>
+        </div>
       <li><a href="#query"><div></div><p>Query Ledger</p><div></div></a></li>
       <li><a href="#put"><div></div><p>Put Ledger</p><div></div></a></li>
       <li><a href="#chaincode"><div></div><p>Chaincode(s)</p><div></div></a></li>
@@ -32,16 +40,8 @@
   </nav>
 
   <article>
-    <div class="flex flex-col">
-        <div id="app">
-            <my-component class="baz boo"></my-component>
-              <div
-                is="menu-item"
-                v-for="menu in info"
-                v-bind:key="menu.id"
-                v-bind:title="menu.title"
-            ></div>
-        </div>
+    <div id="example">
+        <button v-on:click="greet">Greet</button>
     </div>
   </article>
 </section>

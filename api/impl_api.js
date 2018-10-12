@@ -6,8 +6,14 @@
  * Licensed under the Eclipse, Public, License, -, v, 2.0 licenses.
  */
  
- const util = require('util');
+const util = require('util');
+var inputfile = __dirname+'/gen/config/menu-section-left.yml';
+var yaml = require('js-yaml');
+var fs = require('fs');
+var obj = yaml.load(fs.readFileSync(inputfile, {encoding: 'utf-8'}));
+var json = JSON.stringify(obj);
+console.log(`json=${json}.`);
 
 module.exports.getSideNavMenus = function(options) {
-    return '{ "menus" : [ { "id" : 1 , "title" : "test1" } , { "id" : 2 , "title" : "test3" } ] }';
+    return json;
 };

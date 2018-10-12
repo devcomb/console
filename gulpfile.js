@@ -129,6 +129,6 @@ gulp.task('minify', function(done) {
 
 gulp.task('default', gulp.series('startNodemon','browsersync') );
 
-gulp.task('build', gulp.series('generate-code','minify','sass','vue','tailwind') );
+gulp.task('build', gulp.series('generate-code','minify','css','sass','vue','tailwind') );
 
-gulp.task('dev', gulp.series('generate-code','sass','startNodemon') );
+gulp.task('dev', gulp.series('generate-code','css','sass','startNodemon') );
