@@ -12,8 +12,13 @@ var yaml = require('js-yaml');
 var fs = require('fs');
 var obj = yaml.load(fs.readFileSync(inputfile, {encoding: 'utf-8'}));
 var json = JSON.stringify(obj);
-console.log(`json=${json}.`);
+//console.log(`json=${json}.`);
 
 module.exports.getSideNavMenus = function(options) {
+    console.log(`options=${options}.`);
+    return json;
+};
+
+module.exports.getAction = function(options) {
     return json;
 };

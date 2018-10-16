@@ -21,3 +21,16 @@ paths:
       responses:
         200:
           description: "successful operation"
+  /api/getSideNavMenuitemModuleURL:
+    get:
+      summary: Info for a specific pet
+      operationId: "getSideNavMenuitemModuleURL"
+      tags:
+        - SideNavMenuitemModuleURL    
+    parameters:
+        - name: action
+          in: path
+          required: true
+          description: The module location of the action to retrieve
+          schema:
+            type: string

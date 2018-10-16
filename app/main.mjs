@@ -39,9 +39,19 @@ var vm = new Vue({
   // define methods under the `methods` object
   methods: {
     greet: function (event) {
-        import('./components/test.mjs').then(module => {
-            module.default();
-        });
+        try {
+            import('./components/test.mjs').then(function(response) {
+                response.doStuff().then(function(result) {
+                    console.log(result); // "Stuff worked!"
+                    }, function(err) {
+                    console.log(err); // Error: "It broke"
+                })
+            })
+        } catch (error) {
+            console.log("catch error:"+error); // Error: "It broke"
+        }
+        
     }
   }
 })
+

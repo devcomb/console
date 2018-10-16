@@ -10,19 +10,14 @@ export default Vue.component('menu-item', {
     return { 
         msg: 'hello',
         object:  [
-            {name: 'get_ledger'},
-            {name: 'put_ledger'},
-            {name: 'chaincode'},
-            {name: 'policies'},
-            {name: 'certs'},
-            {name: 'users'}
         ]
     };
   },
   // define methods under the `methods` object
   methods: {
     actions: function (event) {
-      console.log(this.findFunction);
+      console.log(this.title+": "+this.action);
+      //console.log(this.findFunction);
     }
   },
   computed:{
