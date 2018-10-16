@@ -4,6 +4,7 @@
 <link href="css/styles.css" rel="stylesheet">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="dist/vue.js"></script>
+<script src="dist/vue-grid-layout.umd.min.js"></script> 
 <script crossorigin src="/main.mjs" type="module"></script>
 <title>CSS Template</title>
 <meta charset="utf-8">
@@ -22,7 +23,7 @@
 <section>
   <nav>
     <ul>
-        <div class="flex flex-col" id="app">
+        <div class="flex flex-col resize" id="app">
             <div
                 is="menu-item"
                 v-for="menu in info"
@@ -36,6 +37,26 @@
   <article>
     <div id="example">
         <button v-on:click="greet">Greet</button>
+            <grid-layout
+                    :layout="layout"
+                    :col-num="12"
+                    :row-height="30"
+                    :is-draggable="true"
+                    :is-resizable="true"
+                    :is-mirrored="false"
+                    :vertical-compact="true"
+                    :margin="[10, 10]"
+                    :use-css-transforms="true"
+            >
+                <grid-item v-for="item in layout"
+                        :x="item.x"
+                        :y="item.y"
+                        :w="item.w"
+                        :h="item.h"
+                        :i="item.i">
+                    {{item.i}}
+                </grid-item>
+            </grid-layout>
     </div>
   </article>
 </section>

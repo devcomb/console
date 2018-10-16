@@ -5,6 +5,12 @@ Vue.component('my-component', {
   template: '<div/>'
 })
 
+var testLayout = [
+    {"x":0,"y":0,"w":2,"h":2,"i":"0"},
+    {"x":0,"y":1,"w":2,"h":4,"i":"1"},
+    {"x":0,"y":2,"w":2,"h":5,"i":"2"}
+];
+
 // new Vue({
 //   render: h => h(App),
 // }).$mount(`#app`);
@@ -34,7 +40,8 @@ new Vue({
 var vm = new Vue({
   el: '#example',
   data: {
-    name: 'Vue.js'
+    name: 'Vue.js',
+    layout: testLayout
   },
   // define methods under the `methods` object
   methods: {
