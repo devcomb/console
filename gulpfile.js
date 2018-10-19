@@ -75,22 +75,14 @@ gulp.task('vue',  function(done) {
     if(process.env.DEV_MODE){
         gulp.src("./node_modules/vue/dist/vue.js")
             .pipe(gulp.dest("app/dist"));
-        gulp.src("./node_modules/vue-grid-layout/dist/vue-grid-layout.umd.js")
-            .pipe(gulp.dest("app/dist"));
-        gulp.src("./node_modules/vue-grid-layout/dist/vue-grid-layout.umd.js.map")
-            .pipe(gulp.dest("app/dist"));
     }
     else{
         gulp.src("./node_modules/vue/dist/vue.min.js")
             .pipe(rename('vue.js'))
             .pipe(gulp.dest("app/dist"));
-        gulp.src("./node_modules/vue-grid-layout/dist/vue-grid-layout.umd.min.js")
-            .pipe(rename('vue-grid-layout.umd.js'))
-            .pipe(gulp.dest("app/dist"));
-        gulp.src("./node_modules/vue-grid-layout/dist/vue-grid-layout.umd.min.js.map")
-            .pipe(rename('vue-grid-layout.umd.js.map'))
-            .pipe(gulp.dest("app/dist"));
     }
+    gulp.src("./node_modules/vue-multipane/dist/vue-multipane.esm.js")
+        .pipe(gulp.dest("app/dist"));
     done();
 });
 

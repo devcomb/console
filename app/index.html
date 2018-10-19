@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="css/styles.css" rel="stylesheet">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="dist/vue.js"></script>
-<script src="dist/vue-grid-layout.umd.min.js"></script> 
 <script crossorigin src="/main.mjs" type="module"></script>
+<link href="css/styles.css" rel="stylesheet">
 <title>CSS Template</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <body>
 
 <header>
@@ -36,27 +36,7 @@
 
   <article>
     <div id="example">
-        <button v-on:click="greet">Greet</button>
-            <grid-layout
-                    :layout="layout"
-                    :col-num="12"
-                    :row-height="30"
-                    :is-draggable="true"
-                    :is-resizable="true"
-                    :is-mirrored="false"
-                    :vertical-compact="true"
-                    :margin="[10, 10]"
-                    :use-css-transforms="true"
-            >
-                <grid-item v-for="item in layout"
-                        :x="item.x"
-                        :y="item.y"
-                        :w="item.w"
-                        :h="item.h"
-                        :i="item.i">
-                    {{item.i}}
-                </grid-item>
-            </grid-layout>
+        
     </div>
   </article>
 </section>

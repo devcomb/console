@@ -1,19 +1,7 @@
 import App from './components/App.js';
+import Test from './components/test.mjs';
+import { Multipane, MultipaneResizer } from './dist/vue-multipane.esm.js';
 
-Vue.component('my-component', {
-//  template: '<p class="foo bar">Hi</p>'
-  template: '<div/>'
-})
-
-var testLayout = [
-    {"x":0,"y":0,"w":2,"h":2,"i":"0"},
-    {"x":0,"y":1,"w":2,"h":4,"i":"1"},
-    {"x":0,"y":2,"w":2,"h":5,"i":"2"}
-];
-
-// new Vue({
-//   render: h => h(App),
-// }).$mount(`#app`);
 
 new Vue({
   el: '#app',
@@ -37,28 +25,11 @@ new Vue({
   }
 })
 
-var vm = new Vue({
-  el: '#example',
-  data: {
-    name: 'Vue.js',
-    layout: testLayout
-  },
-  // define methods under the `methods` object
-  methods: {
-    greet: function (event) {
-        try {
-            import('./components/test.mjs').then(function(response) {
-                response.doStuff().then(function(result) {
-                    console.log(result); // "Stuff worked!"
-                    }, function(err) {
-                    console.log(err); // Error: "It broke"
-                })
-            })
-        } catch (error) {
-            console.log("catch error:"+error); // Error: "It broke"
-        }
-        
-    }
+new Vue({
+   render: h => h(Test),
+  components: {
+    Multipane,
+    MultipaneResizer
   }
-})
+ }).$mount(`#example`);
 
