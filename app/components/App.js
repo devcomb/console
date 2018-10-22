@@ -1,9 +1,9 @@
 export default Vue.component('menu-item', {
   template: `
-  <button
+  <div
       v-on:click="actions"
-      class="rounded-r-lg flex-1 text-black text-left bg-orange-comb hover:bg-blue-dark px-1 py-1 mb-1"
-  >{{ title }}</button>
+      class="rounded-r-lg text-black text-left bg-orange-comb hover:bg-blue-dark mb-1 pt-1 pb-1"
+  >{{ title }}</div>
   `,
   props: ['title','action'],
   data: function () {

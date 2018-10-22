@@ -1,21 +1,12 @@
 import {Multipane,MultipaneResizer} from '../dist/vue-multipane.esm.js';
 export default Vue.component('test', {
   template: `
+  
 <multipane v-on:paneResizeStop=paneResizeStop v-on:paneResizeStart=paneResizeStart v-on:paneResize=paneResize layout="vertical" class="multipane layout-v" v-bind:style="[styleObject1]" >
+   <nav-bar></nav-bar>
    
-    <div  v-bind:style="[stylePane,stylePaneLeft]" class="pane mr-1 w-1/4 flex-none">
-        <div>
-        <h6 class="title is-6">Pane 1a</h6>
-        <p class="subtitle is-6">Fixed width.</p>
-        <p>
-            <small>
-            <strong>Configured with:</strong><br/>
-            minWidth: 100px<br/>
-            width: 150px<br/>
-            maxWidth: 200px<br/>
-            </small>
-        </p>
-        </div>
+    <div  class="pane w-1/4 mr-1 flex-none" v-bind:style="[stylePane,stylePaneLeft]" >
+       
     </div>
     <multipane-resizer ></multipane-resizer>
     <div class="pane w-1/2 mr-1 flex-none" v-bind:style="[stylePane,stylePaneMid]" >
@@ -51,13 +42,14 @@ export default Vue.component('test', {
   `,
   data: function () {
       return {
+          info: null,
           nextElementSiblingStart: null,
           resizeElementChildWidthStart: null,
           resizeElementChildSizeStart: null,
           resizeElementChildSizeMax: 0,
           styleObject1: {
             width: '100%',
-            height: '400px',
+            height: '100%',
             border: '1px solid #ccc',
                 'align-content': 'stretch'
             },
@@ -90,6 +82,12 @@ export default Vue.component('test', {
   },
   // define methods under the `methods` object
   methods: {
+    greet: function (event) {
+      // `this` inside methods point to the Vue instance
+      alert('Hello ' + this.name + '!')
+      // `event` is the native DOM event
+      alert(event.target.tagName)
+    },
     paneResizeStart: function (pane, resizer, size) { 
         if(pane.nextElementSibling){
             if(pane.nextElementSibling.nextElementSibling){
