@@ -1,7 +1,5 @@
 import App from './components/App.js';
 import Test from './components/test.mjs';
-import { Multipane, MultipaneResizer } from './dist/vue-multipane.esm.js';
-
 
 new Vue({
   el: '#app',
@@ -26,10 +24,6 @@ new Vue({
 })
 
 new Vue({
-   render: h => h(Test),
-  components: {
-    Multipane,
-    MultipaneResizer
-  }
+   render: h => h(Test)
  }).$mount(`#example`);
 
