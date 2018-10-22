@@ -2,7 +2,7 @@ export default Vue.component('menu-item', {
   template: `
   <div
       v-on:click="actions"
-      class="rounded-r-lg text-black text-left bg-orange-comb hover:bg-blue-dark mb-1 pt-1 pb-1"
+      class="rounded-l-lg text-black text-left bg-orange-comb hover:bg-blue-dark mt-1 mr-1 pl-1 pt-1 pb-1"
   >{{ title }}</div>
   `,
   props: ['title','action'],

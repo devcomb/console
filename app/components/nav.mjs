@@ -1,13 +1,13 @@
-import App from './App.js';
+import App from './nav-items.js';
 export default Vue.component('nav-bar', {
   template: `
-    <div class="mr-2" style="user-select:none;width:1em">
+    <div class="mr-3" style="user-select:none;width:1em">
         <div
             is="menu-item"
             v-for="menu in info"
             v-bind:title="menu.title"
             v-bind:action="menu.action"
-            style="writing-mode: vertical-rl;text-orientation: mixed;"
+            style="writing-mode: vertical-lr;transform: rotate(-180deg);"
         ></div>
     </div>
   `,

@@ -42,32 +42,31 @@ export default Vue.component('test', {
   `,
   data: function () {
       return {
-          info: null,
-          nextElementSiblingStart: null,
-          resizeElementChildWidthStart: null,
-          resizeElementChildSizeStart: null,
-          resizeElementChildSizeMax: 0,
-          styleObject1: {
+        info: null,
+        nextElementSiblingStart: null,
+        resizeElementChildWidthStart: null,
+        resizeElementChildSizeStart: null,
+        resizeElementChildSizeMax: 0,
+        styleObject1: {
             width: '100%',
             height: '100%',
-            border: '1px solid #ccc',
-                'align-content': 'stretch'
-            },
-            stylePane: {
-                'text-align': 'left',
-                overflow: 'hidden',
-                background: '#eee',
-                'border-left': '1px solid #ccc'
-            },
-            stylePaneMid: {
-                minWidth: '10%'
-            },
-            stylePaneLeft: {
-                minWidth: '10%'
-            },
-            stylePaneRight: {
-                minWidth: '10%'
-            },
+            'align-content': 'stretch'
+        },
+        stylePane: {
+            'text-align': 'left',
+            overflow: 'hidden',
+            background: '#eee',
+            'border-left': '1px solid #ccc'
+        },
+        stylePaneMid: {
+            minWidth: '10%'
+        },
+        stylePaneLeft: {
+            minWidth: '10%'
+        },
+        stylePaneRight: {
+            minWidth: '10%'
+        },
       }
   },
   mounted: function () {
