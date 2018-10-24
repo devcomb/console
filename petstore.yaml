@@ -5,13 +5,10 @@ info:
   license:
     name: MIT
 servers:
-- url: /{basePath}
+- url: /api/
   description: The production API server
-  variables:
-    basePath:
-      default: v2
 paths:
-  /api/getSideNavMenus:
+  /api/getSideNavMenus1:
     get:
       tags:
       - "SideNavMenus"
@@ -21,16 +18,3 @@ paths:
       responses:
         200:
           description: "successful operation"
-  /api/getSideNavMenuitemModuleURL:
-    get:
-      summary: Info for a specific pet
-      operationId: "getSideNavMenuitemModuleURL"
-      tags:
-        - SideNavMenuitemModuleURL    
-    parameters:
-        - name: action
-          in: path
-          required: true
-          description: The module location of the action to retrieve
-          schema:
-            type: string

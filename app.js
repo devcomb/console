@@ -22,6 +22,6 @@ app.use((err, req, res, next) => {
   res.status(status).send({ status, error: 'Server error' });
 });
 
-var appPort = Object.is(process.env.APP_PORT, undefined) ? 8081 : process.env.APP_PORT;
+var appPort = Object.is(process.env.APP_PORT, undefined) ? 8080 : process.env.APP_PORT;
 
 app.listen(appPort); 
