@@ -10,15 +10,14 @@ html, body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #201F1D; }
+  }
 
 /* Style the header */
 header {
   height: 5%;
   text-align: center;
   font-size: 12px;
-  color: #EEF1FC;
-  background-color: #342309; }
+  }
 
 header ul {
   height: 100%;
@@ -35,7 +34,6 @@ header ul li {
 header ul li a {
   display: flex;
   flex-direction: column;
-  color: #EEF1FC;
   padding: 8px 20px;
   text-decoration: none;
   text-align: center; }
@@ -46,8 +44,7 @@ header ul li a div {
 header ul li a p {
   flex: 1; }
 
-header ul li a:hover {
-  background-color: #111; }
+header ul li a:hover { }
 
 /* Container for flexboxes */
 section {
@@ -57,7 +54,7 @@ section {
 /* Style the navigation menu */
 section nav {
   flex: 3;
-  background-color: #31270C; }
+   }
 
 section nav ul {
   list-style-type: none;
@@ -66,37 +63,26 @@ section nav ul {
 section nav ul li a {
   display: block;
   margin: 2px 0px 0px 0px;
-  background: #B88914;
-  color: #000;
-  padding: 8px 16px;
   text-decoration: none; }
 
-section nav ul li a:hover:not(.active) {
-  background-color: #2E2FE3;
-  color: #EEF1FC; }
 
 /* Style the content */
 article {
-  flex: 20;
-  background-color: #201F1D;
-  color: #EEF1FC;
-  padding: 10px; }
+  flex: 20;}
 
 /* Style the footer */
 footer {
   flex-direction: column;
   display: flex;
-  height: 5%;
-  background-color: #342309;
+  height: 5%; 
   text-align: center;
-  color: white; }
+   }
 
 footer div {
   flex: 1; }
 
 footer p {
-  flex: 1;
-  background-color: #342309; }
+  flex: 1; }
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {

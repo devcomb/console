@@ -133,6 +133,6 @@ gulp.task('minify', function(done) {
 
 gulp.task('default', gulp.series('startNodemon','browsersync') );
 
-gulp.task('build', gulp.series('generate-code','minify','css','sass','vue','tailwind') );
+gulp.task('build', gulp.series('generate-code','css','vue','tailwind','minify') );
 
-gulp.task('dev', gulp.series('generate-code','css','sass','startNodemon') );
+gulp.task('dev', gulp.series('generate-code','css','vue','tailwind','startNodemon','browsersync') );

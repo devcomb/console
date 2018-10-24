@@ -5,36 +5,16 @@ export default Vue.component('test', {
 <multipane v-on:paneResizeStop=paneResizeStop v-on:paneResizeStart=paneResizeStart v-on:paneResize=paneResize layout="vertical" class="multipane layout-v" v-bind:style="[styleObject1]" >
    <nav-bar></nav-bar>
    
-    <div  class="pane w-1/4 mr-1 flex-none" v-bind:style="[stylePane,stylePaneLeft]" >
-       
+    <div  class="bg-pane rounded-lg rounded pane p-2 w-1/4 mr-1 flex-none" v-bind:style="[stylePane,stylePaneLeft]" >
+       Place holder.
     </div>
     <multipane-resizer ></multipane-resizer>
-    <div class="pane w-1/2 mr-1 flex-none" v-bind:style="[stylePane,stylePaneMid]" >
-        <div>
-        <h6 class="title is-6">Pane 2</h6>
-        <p class="subtitle is-6">Fluid width.</p>
-        <p>
-            <small>
-            <strong>Configured with:</strong><br/>
-            width: 25%<br/>
-            maxWidth: 50%<br/>
-            </small>
-        </p>
-        </div>
+    <div class="bg-pane rounded-lg rounded pane p-2 w-1/2 mr-1 flex-none" v-bind:style="[stylePane,stylePaneMid]" >
+        Place holder.
     </div>
     <multipane-resizer></multipane-resizer>
-    <div class="pane w-1/4 flex-grow" v-bind:style="[stylePane,stylePaneRight]" >
-        <div>
-        <h6 class="title is-6">Pane 3</h6>
-        <p class="subtitle is-6">Takes remaining available space.</p>
-
-        <p>
-            <small>
-            <strong>Configured with:</strong><br/>
-            flex-grow: 1<br/>
-            </small>
-        </p>
-        </div>
+    <div class="bg-pane rounded-lg pane w-1/4 p-2 flex-grow" v-bind:style="[stylePane,stylePaneRight]" >
+        Place holder.
     </div>
     
     </div>
@@ -54,9 +34,7 @@ export default Vue.component('test', {
         },
         stylePane: {
             'text-align': 'left',
-            overflow: 'hidden',
-            background: '#eee',
-            'border-left': '1px solid #ccc'
+            overflow: 'hidden'
         },
         stylePaneMid: {
             minWidth: '10%'

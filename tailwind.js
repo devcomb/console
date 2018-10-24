@@ -42,8 +42,22 @@ View the full documentation at https://tailwindcss.com.
 | "secondary", or even a numeric scale like "100" and "200", go for it.
 |
 */
-
+let color5='#201F1D';
+let colorText='#EEF1FC';
+let colorHeadFoot = '#342309';
 let colors = {
+  'color1': '#D4D4F7',
+  'color2': '#2E2FE3',
+  'color3': '#FCBA12',
+  'color4': '#B88914',
+  'color5': color5,
+  'color-text': colorText,
+  'header': colorHeadFoot,
+  'footer': colorHeadFoot,
+  'native': '#31270C',
+  'border': color5,
+  'header-text': colorText,
+  'pane': color5,
   'transparent': 'transparent',
   'orange-comb': '#b88914',
 
