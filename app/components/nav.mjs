@@ -3,10 +3,10 @@ export default Vue.component('nav-bar', {
   template: `
     <div class="mr-3" style="user-select:none;width:1em">
         <div
-            is="menu-item"
-            v-for="menu in info"
-            v-bind:title="menu.title"
-            v-bind:action="menu.action"
+            is="nav-item"
+            v-for="nav in info"
+            v-bind:title="nav.title"
+            v-bind:action="nav.action"
             style="writing-mode: vertical-lr;transform: rotate(-180deg);"
         ></div>
     </div>

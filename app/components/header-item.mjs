@@ -1,9 +1,11 @@
-export default Vue.component('nav-item', {
+export default Vue.component('header-item', {
   template: `
-  <div
-      v-on:click="actions"
-      class="rounded-l-lg text-black text-left bg-orange-comb hover:bg-blue-dark mt-1 mr-1 pl-1 pt-1 pb-1"
-  >{{ title }}</div>
+  <div 
+   v-on:click="actions"
+   class="hover:bg-blue-dark h-full pl-1 pr-1 rounded items-center flex"
+  >
+    <div class="text-white">{{ title }}</div>
+  </div>
   `,
   props: ['title','action'],
   data: function () {
