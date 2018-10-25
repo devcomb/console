@@ -2,7 +2,7 @@ export default Vue.component('header-item', {
   template: `
   <div 
    v-on:click="actions"
-   class="hover:bg-blue-dark h-full pl-1 pr-1 rounded items-center flex"
+   class="hover:bg-blue-dark h-full pl-2 pr-2 items-center flex"
   >
     <div class="text-white">{{ title }}</div>
   </div>

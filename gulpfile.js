@@ -86,32 +86,12 @@ gulp.task('vue',  function(done) {
     done();
 });
 
-gulp.task('tailwind',  function(done) {
-    if(process.env.DEV_MODE){
-        gulp.src("./node_modules/tailwindcss/dist/tailwind.css")
-            .pipe(gulp.dest("app/dist"));
-    }
-    else{
-        gulp.src("./node_modules/tailwindcss/dist/tailwind.min.css")
-            .pipe(gulp.dest("app/dist"));
-    }
-    done();
-});
-
-gulp.task('sass',  function(done) {
-    var sass = require('gulp-sass');
-    gulp.src("app/scss/*.scss")
-        .pipe(sass())
-        .pipe(gulp.dest("app/css"));
-    done();
-});
-
 gulp.task('generate-code', function(done) {
     if(process.env.DEV_MODE){
         var del = require('del');
         var execSync = require('child_process').execSync;
         del.sync('api/gen');
-        execSync("./node_modules/.bin/og -o api/gen -t ./templates petstore.yaml express", {stdio:[0,1,2]});
+        execSync("./node_modules/.bin/og -o api/gen -t ./templates devcomb-openapi-v3.yaml express", {stdio:[0,1,2]});
     }
     done();
 });
@@ -133,6 +113,6 @@ gulp.task('minify', function(done) {
 
 gulp.task('default', gulp.series('startNodemon','browsersync') );
 
-gulp.task('build', gulp.series('generate-code','css','vue','tailwind','minify') );
+gulp.task('build', gulp.series('generate-code','css','vue','minify') );
 
-gulp.task('dev', gulp.series('generate-code','css','vue','tailwind','startNodemon','browsersync') );
+gulp.task('dev', gulp.series('generate-code','css','vue','startNodemon','browsersync') );

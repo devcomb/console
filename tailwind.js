@@ -44,7 +44,8 @@ View the full documentation at https://tailwindcss.com.
 */
 let color5='#201F1D';
 let colorText='#EEF1FC';
-let colorHeadFoot = '#342309';
+let colorHeadFoot = '#22292f';
+let colorNav = '#22292f';
 let colors = {
   'color1': '#D4D4F7',
   'color2': '#2E2FE3',
@@ -54,6 +55,7 @@ let colors = {
   'color-text': colorText,
   'header': colorHeadFoot,
   'footer': colorHeadFoot,
+  'nav': colorNav,
   'native': '#31270C',
   'border': color5,
   'header-text': colorText,
@@ -145,7 +147,6 @@ let colors = {
 }
 
 module.exports = {
-
   /*
   |-----------------------------------------------------------------------------
   | Colors                                  https://tailwindcss.com/docs/colors

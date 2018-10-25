@@ -1,12 +1,13 @@
 export default Vue.component('nav-item', {
   template: `
   <div
+      v-bind:class="{ 'bg-pane': this.isActive, 'rounded-r-lg': this.isLeft, 'rounded-l-lg': !this.isLeft}"
       v-on:click="actions"
-      style="padding-right: .1em;"
-      class="rounded-r-lg text-black text-left bg-orange-comb hover:bg-blue-dark mt-1 pl-2 pt-1 pb-1"
+      class="text-white text-left hover:bg-blue-dark mt-1 pl-1 pt-1 pb-1"
+            style="width: 1.5em; writing-mode: vertical-lr;transform: rotate(-180deg);"
   >{{ title }}</div>
   `,
-  props: ['title','action'],
+  props: ['title','action','currentItem','isLeft'],
   data: function () {
     return { 
         msg: 'hello',
@@ -17,11 +18,19 @@ export default Vue.component('nav-item', {
   // define methods under the `methods` object
   methods: {
     actions: function (event) {
-      console.log(this.title+": "+this.action);
-      //console.log(this.findFunction);
+      this.$emit('actionEvent', this.action);
     }
   },
   computed:{
+    isActive: function() {
+        return this.currentItem === this.action;
+    },
+    isInactive: function() {
+        if(this.currentItem==="none" || this.currentItem === this.action){
+            return false;
+        }
+        return true;
+    },
     findFunction: function() {
         var act = this.action;
         var obj = this.object.filter(function(item) {

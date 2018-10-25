@@ -1,25 +1,33 @@
 import App from './nav-items.js';
 export default Vue.component('nav-bar', {
   template: `
-    <div class="ml-1 pt-2" style="user-select:none;width:1.5em">
+    <div class="pt-2" style="user-select:none;width:1.5em">
         <div
             is="nav-item"
             v-for="nav in info"
+            v-bind:isLeft="isLeft"
+            v-on:actionEvent=actionEvent
             v-bind:title="nav.title"
             v-bind:action="nav.action"
-            style="writing-mode: vertical-lr;transform: rotate(-180deg);"
+            v-bind:currentItem="currentItem"
         ></div>
     </div>
   `,
-  props: ['title','action'],
+  props: ['apiURL','currentItem','isLeft'],
   data: function () {
     return { 
         info: null
+        
     };
+  },
+  methods: {
+    actionEvent: function (action) {        
+        this.$emit('actionEvent', action);
+    }
   },
   mounted: function () {
     axios
-      .get('https://nodejs-theia-nginx-test8.cloudapps.devcomb.com/api/getSideNavMenus')
+      .get(this.apiURL)
       .then(response => (this.info = response.data.menus ));
   }
 });

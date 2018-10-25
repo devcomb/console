@@ -1,0 +1,4 @@
+menus:
+    -   title: "Monitor"
+        action: "monitor"
+

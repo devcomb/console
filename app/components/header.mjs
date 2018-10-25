@@ -3,7 +3,8 @@ import HeaderItem from './header-item.mjs';
 
 export default Vue.component('compHeader', {
   template: `
-  <div style="user-select:none" class="h-full pt-1 pb-1 layout-h flex flex-row">
+  <div style="user-select:none" 
+   class="h-full pl-6  layout-h flex flex-row">
         <div
             is="header-item"
             v-for="item in info"
@@ -12,7 +13,6 @@ export default Vue.component('compHeader', {
         ></div>
  </div>
   `,
-  props: ['title','action'],
   data: function () {
     return { 
         info: null
@@ -20,7 +20,7 @@ export default Vue.component('compHeader', {
   },
   mounted: function () {
     axios
-      .get('https://nodejs-theia-nginx-test8.cloudapps.devcomb.com/api/getSideNavMenus')
+      .get('https://nodejs-theia-nginx-test8.cloudapps.devcomb.com/api/getHeaderMenus')
       .then(response => (this.info = response.data.menus ));
   }
 });
