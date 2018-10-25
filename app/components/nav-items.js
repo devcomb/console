@@ -2,7 +2,8 @@ export default Vue.component('nav-item', {
   template: `
   <div
       v-on:click="actions"
-      class="rounded-l-lg text-black text-left bg-orange-comb hover:bg-blue-dark mt-1 mr-1 pl-1 pt-1 pb-1"
+      style="padding-right: .1em;"
+      class="rounded-r-lg text-black text-left bg-orange-comb hover:bg-blue-dark mt-1 pl-2 pt-1 pb-1"
   >{{ title }}</div>
   `,
   props: ['title','action'],

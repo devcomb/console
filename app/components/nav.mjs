@@ -1,7 +1,7 @@
 import App from './nav-items.js';
 export default Vue.component('nav-bar', {
   template: `
-    <div class="mr-3" style="user-select:none;width:1em">
+    <div class="ml-1 pt-2" style="user-select:none;width:1.5em">
         <div
             is="nav-item"
             v-for="nav in info"

@@ -1,23 +1,22 @@
 import {Multipane,MultipaneResizer} from '../dist/vue-multipane.esm.js';
+import Pane from './pane.mjs';
+
 export default Vue.component('test', {
   template: `
   
 <multipane v-on:paneResizeStop=paneResizeStop v-on:paneResizeStart=paneResizeStart v-on:paneResize=paneResize layout="vertical" class="multipane layout-v" v-bind:style="[styleObject1]" >
    <nav-bar></nav-bar>
    
-    <div  class="bg-pane rounded-lg rounded pane p-2 w-1/4 flex-none" v-bind:style="[stylePane,stylePaneLeft]" >
+    <pane class="flex-none border-2 border-orange-comb rounded-r-lg" v-bind:style="[stylePane,stylePaneLeft]" >
        Place holder.
-    </div>
+    </pane>
     <multipane-resizer v-bind:style="[styleResizer]" ></multipane-resizer>
-    <div class="bg-pane rounded-lg rounded pane p-2  flex-grow" v-bind:style="[stylePane,stylePaneMid]" >
+    <pane class="flex-grow rounded-lg" v-bind:style="[stylePane,stylePaneMid]" >
         Place holder.
-    </div>
-    <multipane-resizer v-bind:style="[styleResizer]" ></multipane-resizer>
-    <div class="bg-pane rounded-lg pane w-1/4 p-2  flex-none" v-bind:style="[stylePane,stylePaneRight]" >
-        Place holder.
-    </div>
+    </pane>
+    <multipane-resizer  v-bind:style="[styleResizer]" />
+    <pane class="flex-none border-2 border-orange-comb rounded-l-lg" v-bind:style="[stylePane,stylePaneRight]" />
     
-    </div>
 </multipane>
   `,
   data: function () {
@@ -46,12 +45,13 @@ export default Vue.component('test', {
             minWidth: '10%'
         },
         styleResizer: {
-            minWidth: '.4em',
-            width: '.4em !important',
+            minWidth: '.2em',
+            width: '.2em !important',
             'margin-left': '0px !important',
             'left': '0px !important',
             'right': '0px !important'
         },
+        currentSize: null
       }
   },
   mounted: function () {
@@ -73,16 +73,17 @@ export default Vue.component('test', {
       alert(event.target.tagName)
     },
     paneResizeStart: function (pane, resizer, size) { 
+        this.currentSize = size;
         if(pane.nextElementSibling){
             if(pane.nextElementSibling.nextElementSibling){
-                var currentSize = parseInt(size, 10);
-                this.resizeElementChildSizeMax=currentSize;
+                this.resizeElementChildSizeMax=pane.offsetWidth;
                 this.nextElementSiblingStart=pane.nextElementSibling.nextElementSibling.offsetWidth;
                 this.resizeElementChildWidthStart=pane.offsetWidth;
             }
         }
     },
     paneResize: function (pane, resizer, size) {
+        this.currentSize = size;
         if(pane.nextElementSibling){
             if(pane.nextElementSibling.nextElementSibling){
                 this.resize(pane, resizer, size);
@@ -92,12 +93,13 @@ export default Vue.component('test', {
     paneResizeStop: function (pane, resizer, size) {
         if(pane.nextElementSibling){
             if(pane.nextElementSibling.nextElementSibling){
-                this.resize(pane, resizer, size);
+                //this.resize(pane, resizer, size);
                 if( pane.classList.contains('flex-grow') ){
                     pane.style.width="";
                 }
                 if( pane.nextElementSibling.nextElementSibling.classList.contains('flex-grow') ){
                     pane.nextElementSibling.nextElementSibling.style.width="";
+                    pane.style.width=this.currentSize;
                 }
             }
         }
