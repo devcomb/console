@@ -17,12 +17,7 @@ export default Vue.component('test', {
 
     <multipane-resizer v-bind:class="{ 'hidden': !this.navActive }" v-bind:style="[styleResizer,styleResizerLeft]" ></multipane-resizer>
     <pane v-bind:currentNavItem="currentItem" 
-     v-bind:class="{ 
-       'rounded-r-lg': (!this.navActive && this.navActiveRight), 
-       'rounded-l-lg': (this.navActive && !this.navActiveRight),
-       'rounded-lg': (this.navActive && this.navActiveRight)
-      }" 
-     class="flex-grow " v-bind:style="[stylePane,stylePaneMid]" >
+     class="flex-grow rounded-lg" v-bind:style="[stylePane,stylePaneMid]" >
        
     </pane>
     
