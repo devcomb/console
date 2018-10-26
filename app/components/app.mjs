@@ -7,9 +7,13 @@ export default Vue.component('test', {
   
 <multipane v-on:paneResizeStop=paneResizeStop v-on:paneResizeStart=paneResizeStart v-on:paneResize=paneResize layout="vertical"
  class="multipane layout-v" v-bind:style="[styleObject1]" >
-    <nav-bar class="ml-1" v-on:actionEvent=actionNavEvent v-bind:apiURL="'/api/getSideNavMenus'" v-bind:isLeft="true" v-bind:currentItem="currentItem"></nav-bar>
+    <nav-bar class="ml-1" v-on:actionEvent=actionNavEvent 
+     v-bind:apiURL="'/api/getSideNavMenus'" 
+     v-bind:isLeft="true" v-bind:currentItem="currentItem" />
    
-    <pane-left v-bind:class="{ 'hidden': !this.navActive }" v-bind:currentNavItem="currentItem" class="flex-none rounded-r-lg" v-bind:style="[stylePane,stylePaneLeft]" />
+    <pane-left v-bind:class="{ 'hidden': !this.navActive }" 
+     v-bind:currentNavItem="currentItem" class="flex-none rounded-r-lg" 
+     v-bind:style="[stylePane,stylePaneLeft]" />
 
     <multipane-resizer v-bind:class="{ 'hidden': !this.navActive }" v-bind:style="[styleResizer,styleResizerLeft]" ></multipane-resizer>
     <pane v-bind:currentNavItem="currentItem" 
@@ -30,7 +34,7 @@ export default Vue.component('test', {
 
     <nav-bar v-on:actionEvent=actionNavEventRight v-bind:isLeft="false" 
      v-bind:apiURL="'/api/getSideNavRightMenus'" 
-     v-bind:currentItemRight="currentItem"></nav-bar>
+     v-bind:currentItem="currentItemRight"></nav-bar>
     
 </multipane>
   `,

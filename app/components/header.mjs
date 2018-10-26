@@ -20,7 +20,7 @@ export default Vue.component('compHeader', {
   },
   mounted: function () {
     axios
-      .get('https://nodejs-theia-nginx-test8.cloudapps.devcomb.com/api/getHeaderMenus')
+      .get('/api/getHeaderMenus')
       .then(response => (this.info = response.data.menus ));
   }
 });
