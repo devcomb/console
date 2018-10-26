@@ -9,6 +9,6 @@ menus:
         action: "policies"
     -   title: "Certs"
         action: "certs"
-    -   title: "Users"
+    -   title: "Users2"
         action: "users"
 

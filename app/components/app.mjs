@@ -11,7 +11,7 @@ export default Vue.component('test', {
    
     <pane-left v-bind:class="{ 'hidden': !this.navActive }" v-bind:currentNavItem="currentItem" class="flex-none rounded-r-lg" v-bind:style="[stylePane,stylePaneLeft]" />
 
-    <multipane-resizer v-bind:class="{ 'hidden': !this.navActive }" v-bind:style="[styleResizer]" ></multipane-resizer>
+    <multipane-resizer v-bind:class="{ 'hidden': !this.navActive }" v-bind:style="[styleResizer,styleResizerLeft]" ></multipane-resizer>
     <pane v-bind:currentNavItem="currentItem" 
      v-bind:class="{ 
        'rounded-r-lg': (!this.navActive && this.navActiveRight), 
@@ -58,7 +58,10 @@ export default Vue.component('test', {
         },
         stylePaneRight: {
             minWidth: '10%'
-        },        
+        },   
+        styleResizerLeft: {
+            display: "block !important"
+        },     
         styleResizerRight: {
             display: "block !important"
         },
@@ -96,10 +99,12 @@ export default Vue.component('test', {
         if(this.currentItem===action){
             this.navActive=false;
             this.currentItem="none";
+            this.styleResizerLeft.display="none !important";
         }
         else{
             this.navActive=true;
             this.currentItem=action;
+            this.styleResizerLeft.display="block !important";
         }
     },
     actionNavEventRight: function (action) {
