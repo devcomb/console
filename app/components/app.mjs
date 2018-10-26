@@ -7,7 +7,7 @@ export default Vue.component('test', {
   
 <multipane v-on:paneResizeStop=paneResizeStop v-on:paneResizeStart=paneResizeStart v-on:paneResize=paneResize layout="vertical"
  class="multipane layout-v" v-bind:style="[styleObject1]" >
-    <nav-bar class="ml-1" v-on:actionEvent=actionNavEvent v-bind:apiURL="'https://nodejs-theia-nginx-test8.cloudapps.devcomb.com/api/getSideNavMenus'" v-bind:isLeft="true" v-bind:currentItem="currentItem"></nav-bar>
+    <nav-bar class="ml-1" v-on:actionEvent=actionNavEvent v-bind:apiURL="'/api/getSideNavMenus'" v-bind:isLeft="true" v-bind:currentItem="currentItem"></nav-bar>
    
     <pane-left v-bind:class="{ 'hidden': !this.navActive }" v-bind:currentNavItem="currentItem" class="flex-none rounded-r-lg" v-bind:style="[stylePane,stylePaneLeft]" />
 
@@ -29,7 +29,7 @@ export default Vue.component('test', {
      class="flex-none rounded-l-lg" v-bind:style="[stylePane,stylePaneRight]" />
 
     <nav-bar v-on:actionEvent=actionNavEventRight v-bind:isLeft="false" 
-     v-bind:apiURL="'https://nodejs-theia-nginx-test8.cloudapps.devcomb.com/api/getSideNavRightMenus'" 
+     v-bind:apiURL="'/api/getSideNavRightMenus'" 
      v-bind:currentItemRight="currentItem"></nav-bar>
     
 </multipane>
