@@ -7,7 +7,7 @@ async function createServer() {
     // See https://github.com/exegesis-js/exegesis/blob/master/docs/Options.md
     const options = {
         controllers: path.resolve(__dirname, './controllers'),
-        allowMissingControllers: true
+        allowMissingControllers: false
     };
 
     // This creates an exgesis middleware, which can be used with express,
