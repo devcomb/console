@@ -6,7 +6,7 @@ var cache = require('gulp-cached');
 var dirSync = require( 'gulp-directory-sync' );
 
 gulp.task('watch', function(){
-  gulp.watch('templates', ['generate-code']);
+//   gulp.watch('templates', ['generate-code']);
 });
 
 gulp.task('css', function () {
@@ -123,4 +123,5 @@ gulp.task('default', gulp.series('startNodemon','browsersync') );
 
 gulp.task('build', gulp.series('generate-code','css','vue','minify') );
 
-gulp.task('dev', gulp.series('generate-code','css','vue','startNodemon', gulp.parallel('watch','browsersync') ) );
+//TODO fix watch
+gulp.task('dev', gulp.series('css','vue','startNodemon', gulp.parallel('watch','browsersync') ) );

@@ -1,7 +1,24 @@
 'use strict';
 
 var express = require('express'); 
-var app = require('./api/gen/src/api/api.js'); 
+const path = require('path');
+const http = require('http');
+// var app = require('./api/gen/src/api/api.js'); 
+const exegesisExpress = require('exegesis-express');
+
+const options = {
+    controllers: path.resolve(__dirname, './controllers'),
+    allowMissingControllers: false
+};
+
+const exegesisMiddleware = await exegesisExpress.middleware(
+    path.resolve(__dirname, './openapi.yaml'),
+    options
+);
+
+const app = express();
+
+// app.use(exegesisMiddleware);
 
 app.use('/',express.static('app'));
 

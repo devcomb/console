@@ -7,7 +7,7 @@
  */
  
 const util = require('util');
-const yamlDir = __dirname+'/gen/config/';
+const yamlDir = __dirname+'/config/';
 
 //console.log(`json=${json}.`);
 function getJson(yamlFile) {
