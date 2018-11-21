@@ -33,6 +33,7 @@
   "keywords": [],
   "dependencies": {
     "axios": "^0.18.0",
+    "bestzip": "^2.1.2",
     "body-parser": "^1.18.3",
     "bunyan": "^1.8.12",
     "child_process": "^1.0.2",
@@ -48,10 +49,12 @@
     "gulp-rename": "^1.4.0",
     "gulp-runtime": "^2.0.0",
     "js-yaml": "^3.12.0",
+    "jszip-cli": "^1.4.24",
     "lodash": "^4.17.11",
     "node-yaml-config": "0.0.4",
     "oas-generator": "^2.1.1",
     "openapi3-generator": "^0.7.0",
+    "typescript": "^3.1.6",
     "vue-multipane": "^0.9.5",
     "yo": "^2.0.5"
   },

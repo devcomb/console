@@ -14,7 +14,7 @@ paths:
   /greet:
     get:
       summary: Greets the user
-      operationId: getGreeting
+      operationId: greetGet
       x-exegesis-controller: greetController
       parameters:
         - description: The name of the user to greet.

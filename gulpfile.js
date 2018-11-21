@@ -5,9 +5,6 @@ var rename = require('gulp-rename');
 var cache = require('gulp-cached');
 var dirSync = require( 'gulp-directory-sync' );
 
-gulp.task('watch', function(){
-//   gulp.watch('templates', ['generate-code']);
-});
 
 gulp.task('css', function () {
   var postcss = require('gulp-postcss');
@@ -92,18 +89,6 @@ gulp.task('vue',  function(done) {
     done();
 });
 
-gulp.task('generate-code', function(done) {
-    if(process.env.DEV_MODE){
-        var del = require('del');
-        var execSync = require('child_process').execSync;
-        del.sync('.cache/apigen');
-        execSync("./node_modules/.bin/og -o .cache/apigen -t ./templates devcomb-openapi-v3.yaml express", {stdio:[0,1,2]});
-        return gulp.src( './' )
-            .pipe(dirSync( '.cache/apigen', 'api/gen', { printSummary: true } ));
-    }
-    done();
-});
-
 gulp.task('minify', function(done) {
     var minify = require('gulp-minify');
     gulp.src(['app/*.js', 'app/*.mjs'])
@@ -121,7 +106,6 @@ gulp.task('minify', function(done) {
 
 gulp.task('default', gulp.series('startNodemon','browsersync') );
 
-gulp.task('build', gulp.series('generate-code','css','vue','minify') );
+gulp.task('build', gulp.series('css','vue','minify') );
 
-//TODO fix watch
-gulp.task('dev', gulp.series('css','vue','startNodemon', gulp.parallel('watch','browsersync') ) );
+gulp.task('dev', gulp.series('css','vue','startNodemon', 'browsersync') );
