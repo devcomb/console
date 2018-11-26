@@ -1,6 +1,6 @@
 # devcomb-console [![Build Status](https://secure.travis-ci.org/devcomb/console.png?branch=master)](http://travis-ci.org/devcomb/console)
 
-This Project is Alpha and is in no way in working state.
+This project is alpha and is in no way in working state.
 
 Console UI for Hyperledger Fabric client application.
 
