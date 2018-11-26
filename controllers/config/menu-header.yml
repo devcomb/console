@@ -1,0 +1,6 @@
+menus:
+    -   title: "File"
+        action: "get_file"
+    -   title: "Edit"
+        action: "put_edit"
+

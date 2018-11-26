@@ -1,0 +1,14 @@
+menus:
+    -   title: "Query Ledger"
+        action: "get_ledger"
+    -   title: "Put Ledger"
+        action: "put_ledger"
+    -   title: "Chaincode(s)"
+        action: "chaincode"
+    -   title: "Policies"
+        action: "policies"
+    -   title: "Certs"
+        action: "certs"
+    -   title: "Users"
+        action: "users"
+

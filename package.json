@@ -26,18 +26,49 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
+    "build": "node gulpfile.js build",
     "start": "node gulpfile.js",
     "test": "echo Todo"
   },
   "keywords": [],
   "dependencies": {
-    "browser-sync": "^2.24.6",
-    "express": "^4.16.3",
+    "axios": "^0.18.0",
+    "bestzip": "^2.1.2",
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
+    "child_process": "^1.0.2",
+    "composer-cli": "^0.20.4",
+    "composer-rest-server": "^0.20.4",
+    "cookie-parser": "^1.4.3",
+    "exegesis-express": "^1.0.0",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "generator-hyperledger-composer": "^0.20.4",
     "gulp": "^3.9.1",
-    "gulp-runtime": "^2.0.0",
     "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-runtime": "^2.0.0",
+    "js-yaml": "^3.12.0",
+    "jszip-cli": "^1.4.24",
+    "lodash": "^4.17.11",
+    "node-yaml-config": "0.0.4",
+    "oas-generator": "^2.1.1",
+    "openapi3-generator": "^0.7.0",
+    "typescript": "^3.1.6",
+    "vue-multipane": "^0.9.5",
+    "yo": "^2.0.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "browser-sync": "^2.26.0",
+    "del": "^3.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-directory-sync": "^1.2.3",
+    "gulp-minify": "^3.1.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.1",
-    "nodemon": "^1.18.3",
-    "tailwindcss": "^0.6.4"
-  }
+    "tailwindcss": "^0.6.6",
+    "vue": "^2.5.17"
+  },
+  "license": "EPL-2.0"
 }

@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet">
-<title>CSS Template</title>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="dist/vue.js"></script>
+<script crossorigin src="/main.mjs" type="module"></script>
+<link href="css/styles.css" rel="stylesheet">
+<title>DevComb</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <body>
 
-<header>
-    <ul>
-      <li><a href="#file"><div></div><p>File</p><div></div></a></li>
-      <li><a href="#edit"><div></div><p>Edit</p><div></div></a></li>
-      <li><a href="#placeholder1"><div></div><p>Place Holder</p><div></div></a></li>
-      <li><a href="#placeholder2"><div></div><p>Place Holder</p><div></div></a></li>
-    </ul>
+<header class="bg-header border-t-0 border-r-0 border-l-0 border-orange-comb border text-white text-center text-base h-6">
+    <div id="header">
+        
+    </div>
 </header>
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="#query"><div></div><p>Query Ledger</p><div></div></a></li>
-      <li><a href="#put"><div></div><p>Put Ledger</p><div></div></a></li>
-      <li><a href="#chaincode"><div></div><p>Chaincode(s)</p><div></div></a></li>
-      <li><a href="#policies"><div></div><p>Policies</p><div></div></a></li>
-      <li><a href="#certs"><div></div><p>Certs</p><div></div></a></li>
-      <li><a href="#users"><div></div><p>Users</p><div></div></a></li>
-    </ul>
-  </nav>
+<section class="bg-nav text-white text-base pt-1 pb-1">
 
   <article>
+    <div id="app">
+        
+    </div>
   </article>
 </section>
-
-<footer>
+<footer class="bg-footer border-b-0 border-r-0 border-l-0 border-orange-comb border text-white text-base h-6">
   <div></div>
   <p>Footer</p>
   <div></div>
 </footer>
+
 
 </body>
 </html>

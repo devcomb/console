@@ -13,3 +13,9 @@ app/css
 .local
 .git-credentials
 .v8flags*
+examples
+api/gen
+app/dist
+fabric-dev-servers
+.composer
+wallet

@@ -1,0 +1,55 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+body {
+  }
+
+/* Container for flexboxes */
+section {
+  height: 90%;
+  display: flex; }
+
+/* Style the navigation menu */
+section nav {
+  flex: 3;
+   }
+
+section nav ul {
+  list-style-type: none;
+  padding: 0px 0px 0px 0px; }
+
+section nav ul li a {
+  display: block;
+  margin: 2px 0px 0px 0px;
+  text-decoration: none; }
+
+
+/* Style the content */
+article {
+  flex: 20;}
+
+/* Style the footer */
+footer {
+  flex-direction: column;
+  display: flex;
+  height: 5%; 
+  text-align: center;
+   }
+
+footer div {
+  flex: 1; }
+
+footer p {
+  flex: 1; }
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    flex-direction: column; } }
