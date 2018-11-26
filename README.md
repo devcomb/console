@@ -2,6 +2,8 @@
 
 Console UI for Hyperledger Fabric client application.
 
+![Devcomb Screenshot](https://raw.githubusercontent.com/devcomb/console/master/devcomb_snapshot.png "Devcomb Screenshot")
+
 ## Getting Started
 _(Coming soon)_
 
