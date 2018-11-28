@@ -6,6 +6,8 @@
 //Theia extensions or plugins.
 import { ExegesisContext } from 'exegesis';
 
+// ./node_modules/.bin/tsc controllers/greetController.ts
+
 export function greetGet(context: ExegesisContext) {
     const {name} = context.params.query;
     return {greeting: `Hello, ${name}!`};
