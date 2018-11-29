@@ -2,8 +2,6 @@
 
 var gulp = require('gulp-runtime').create();
 var rename = require('gulp-rename');
-var cache = require('gulp-cached');
-var dirSync = require( 'gulp-directory-sync' );
 
 
 gulp.task('css', function () {
