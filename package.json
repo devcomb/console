@@ -39,6 +39,7 @@
     "composer-cli": "^0.20.4",
     "composer-rest-server": "^0.20.4",
     "cookie-parser": "^1.4.3",
+    "event-stream": "^4.0.1",
     "exegesis-express": "^1.0.0",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
