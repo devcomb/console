@@ -102,7 +102,7 @@ gulp.task('minify', function(done) {
     done();
 });
 
-gulp.task('default', gulp.series('startNodemon','browsersync') );
+gulp.task('default', gulp.series('startNodemon') );
 
 gulp.task('build', gulp.series('css','vue','minify') );
 
