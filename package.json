@@ -69,6 +69,5 @@
     "gulp-sass": "^4.0.1",
     "tailwindcss": "^0.6.6",
     "vue": "^2.5.17"
-  },
-  "license": "EPL-2"
+  }
 }
